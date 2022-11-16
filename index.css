@@ -90,13 +90,16 @@ p
     }    
 }
 
+main
+{
+    max-width: 75rem;
+    margin: 2rem auto 0;
+}
+
 .posts
 {
     display: grid;
-    margin-top: 2rem;
-    margin-inline: auto;
     grid-template-columns: repeat(auto-fit, minmax(30ch, 50ch));
-    max-width: 90%;
     justify-items: center;
     justify-content: center;
     gap: 4rem 1rem;
