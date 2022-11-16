@@ -31,16 +31,21 @@ button
     border-radius: 0.5em;
     background-color: #006fca;
     border: none;
-    transition-property: scale, background-color;
+    transition-property: scale, background-color, filter;
     transition: 0.1s;
 }
 
-button:hover
+button:disabled
+{
+    filter: saturate(10%);
+}
+
+button:not(:disabled):where(:hover, :focus-visible)
 {
     background-color: #008cff;
 }
 
-button:active
+button:not(:disabled):active
 {
     scale: 0.9;
 }
@@ -49,6 +54,7 @@ h1
 {
     text-transform: capitalize;
     margin-bottom: 0.6em;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 p
@@ -57,12 +63,45 @@ p
     margin-bottom: 1em;
 }
 
+.loading
+{
+    position: absolute;
+    translate: -50% -50%;
+    left: 50%;
+    top: 50%;
+    width: 10vw;
+    max-width: 5rem;
+    aspect-ratio: 1;
+    border-top: 0.1rem solid;
+    border-bottom: 0.1rem solid;
+    border-color: blue;
+    border-left: 0.1rem solid transparent;
+    border-right: 0.1rem solid transparent;
+    border-radius: 100%;
+    animation: rotate 2s infinite forwards linear;
+}
+
+@keyframes rotate
+{
+    to
+    {
+        rotate: 360deg;
+    }    
+}
+
 .posts
 {
+    display: grid;
     margin-top: 2rem;
+    margin-inline: auto;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 50ch));
+    max-width: 90%;
+    justify-items: center;
+    justify-content: center;
+    gap: 4rem 1rem;
 }
 
 .post
 {
-    margin-bottom: 4em;
+    width: 100%;
 }
