@@ -12,7 +12,8 @@ button.addEventListener('click', () =>
 
 worker.addEventListener('message', e =>
 {
-    document.body.insertAdjacentHTML('beforeend', e.data.template);
+    // document.body.insertAdjacentHTML('beforeend', e.data.template);
+    document.querySelector('main').innerHTML = e.data.template;
 });
 
 worker.addEventListener('error', console.error);
