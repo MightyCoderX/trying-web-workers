@@ -33,6 +33,7 @@ button
     border: none;
     transition-property: scale, background-color, filter;
     transition: 0.1s;
+    color: #ddd;
 }
 
 button:disabled
