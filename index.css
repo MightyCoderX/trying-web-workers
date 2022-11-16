@@ -23,12 +23,16 @@ body
 
 button
 {
+    display: block;
+    position: sticky;
+    top: 1.5rem;
     padding: 1em 2em;
     font-size: 1em;
     border-radius: 0.5em;
     background-color: #006fca;
+    border: none;
     transition-property: scale, background-color;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 button:hover
@@ -50,6 +54,7 @@ h1
 p
 {
     color: #aaa;
+    margin-bottom: 1em;
 }
 
 .posts
